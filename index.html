@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" accept="imag/*" onchange="loadfil(event)">
+    <img id="outimg"/>
+
+    <script>
+var loadfil=function(event){
+    var outimg=document.getElementById('outimg');
+    outimg.src=URL.createObjectURL(event.target.files[0]);
+    outimg.onload=function(){
+        Image.revokeobjecturl(outimg.img)
+        //free memory
+        
+    
+    }
+};
+
+
+
+    </script>
+</body>
+</html>
